@@ -81,7 +81,7 @@ class DsBridgeInAppWebViewState extends State<DsBridgeInAppWebView> {
     debugPrint('[InAppWebView] page finished loading: $url');
     if (url?.path.endsWith("whiteboardBridge/index.html") ?? false) {
       await dsBridge.runCompatScript();
-      widget.onDSBridgeCreated(dsBridge);
+      widget.onDSBridgeCreated(dsBridge, _controller);
     }
   }
 

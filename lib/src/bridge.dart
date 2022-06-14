@@ -4,8 +4,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-typedef BridgeCreatedCallback = void Function(DsBridge value);
+typedef BridgeCreatedCallback = void Function(DsBridge value, dynamic controller);
 typedef OnReturnValue<T> = void Function([T returnValue]);
 
 class JavaScriptNamespaceInterface {

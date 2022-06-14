@@ -70,7 +70,7 @@ class DsBridgeWebViewState extends State<DsBridgeWebView> {
     debugPrint('WebView Page finished loading: $url');
     if (url.endsWith("whiteboardBridge/index.html")) {
       await dsBridge.runCompatScript();
-      widget.onDSBridgeCreated(dsBridge);
+      widget.onDSBridgeCreated(dsBridge, _controller);
     }
   }
 

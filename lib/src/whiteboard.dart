@@ -46,9 +46,9 @@ class WhiteboardView extends StatelessWidget {
     }
   }
 
-  void onDSBridgeCreated(DsBridge dsBridge) {
+  void onDSBridgeCreated(DsBridge dsBridge, dynamic controller) {
     dsBridge.addJavascriptObject(createSDKInterface());
-    onSdkCreated(WhiteSdk(options: options, dsBridge: dsBridge));
+    onSdkCreated(WhiteSdk(options: options, dsBridge: dsBridge), controller);
   }
 
   JavaScriptNamespaceInterface createSDKInterface() {
@@ -328,7 +328,7 @@ class WhiteDisplayer {
 }
 
 // Sdk Callback
-typedef SdkCreatedCallback = void Function(WhiteSdk whiteSdk);
+typedef SdkCreatedCallback = void Function(WhiteSdk whiteSdk, dynamic controller);
 typedef SdkOnLoggerCallback = void Function(dynamic value);
 typedef SdkSetupFailCallback = void Function(WhiteException exception);
 
